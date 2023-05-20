@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-var myEnumerable = new Enumerable2();
+var myEnumerable = new Enumerable2<int?>();
 
 myEnumerable.Push(1);
 myEnumerable.Push(2);

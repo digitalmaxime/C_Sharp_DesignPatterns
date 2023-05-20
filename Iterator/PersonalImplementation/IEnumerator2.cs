@@ -1,6 +1,6 @@
-public interface IEnumerator2
+public interface IEnumerator2<T>
 {
-    public int? Current { get; }
+    public T? Current { get; }
     
     public bool MoveNext();
 

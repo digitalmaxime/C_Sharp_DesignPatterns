@@ -1,6 +1,6 @@
-interface IEnumerable2 {
+interface IEnumerable2<T> {
 
-    IEnumerator2 GetEnumerator();
+    IEnumerator2<T> GetEnumerator();
 
-    void ForEach2(Action<int> someAction);
+    void ForEach2(Action<T> someAction);
 }

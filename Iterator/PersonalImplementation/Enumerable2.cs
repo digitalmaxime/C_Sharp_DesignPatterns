@@ -1,13 +1,13 @@
-class Enumerable2 : IEnumerable2
+class Enumerable2<T> : IEnumerable2<T>
 {
-    private int[] _content = new int[1];
+    private T[] _content = new T[1];
     private int nbOfElements = 0;
 
-    public void Push(int a)
+    public void Push(T a)
     {
         if (nbOfElements >= _content.Length)
         {
-            var tempArray = new int[this._content.Length * 2];
+            var tempArray = new T[this._content.Length * 2];
             for (int i = 0; i < this._content.Length; i++)
             {
                 tempArray[i] = this._content[i];
@@ -28,22 +28,22 @@ class Enumerable2 : IEnumerable2
         System.Console.WriteLine();
     }
 
-    public void ForEach2(Action<int> someAction)
+    public void ForEach2(Action<T> someAction)
     {
         var enumerator = this.GetEnumerator();
 
         do 
         {
             var value = enumerator.Current;
-            someAction(value ?? -1);
+            someAction((T)value);
 
         } while (enumerator.MoveNext());
 
     }
 
-    public IEnumerator2 GetEnumerator()
+    public IEnumerator2<T> GetEnumerator()
     {
-        return new Enumerator2(this._content);
+        return new Enumerator2<T>(this._content);
     }
 
 }
